@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-@Library("jenkins-shared-libraries@bugfix/improve-change-detection") _
+@Library("jenkins_shared_libraries@bugfix/improve-change-detection") _
 
 pipeline {
     agent { label 'ansible || linux' }
