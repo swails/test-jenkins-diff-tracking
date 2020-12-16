@@ -1,4 +1,5 @@
 #!/usr/bin/env groovy
+@Library("jenkins-shared-libraries@bugfix/improve-change-detection") _
 
 pipeline {
     agent { label 'ansible || linux' }
@@ -6,10 +7,7 @@ pipeline {
         stage("Interrogate") {
             steps {
                 script {
-                    echo "I am about to dive into the build object"
-                    currentBuild.properties.each {prop, val ->
-                        echo "currentBuild.${prop} = ${it}"
-                    }
+                    github.interrogateBuild()
                 }
             }
         }
