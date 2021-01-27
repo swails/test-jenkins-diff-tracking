@@ -10,6 +10,9 @@ pipeline {
                     // Comment to force a change
                     def results = github.interrogateBuild()
                     echo "results = ${results}"
+
+                    boolean changed = github.fileChangedIn('.')
+                    echo "File changed? ${changed}"
                 }
             }
         }
