@@ -7,7 +7,8 @@ pipeline {
         stage("Interrogate") {
             steps {
                 script {
-                    github.interrogateBuild()
+                    def results = github.interrogateBuild()
+                    echo "results = ${results}"
                 }
             }
         }
