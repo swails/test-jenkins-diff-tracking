@@ -7,6 +7,7 @@ pipeline {
         stage("Interrogate") {
             steps {
                 script {
+                    // Comment to force a change
                     def results = github.interrogateBuild()
                     echo "results = ${results}"
                 }
