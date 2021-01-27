@@ -7,6 +7,7 @@ pipeline {
         stage("Interrogate") {
             steps {
                 script {
+                    echo "build = ${currentBuild}"
                     github.interrogateBuild()
                 }
             }
