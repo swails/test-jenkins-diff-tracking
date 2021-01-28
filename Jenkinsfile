@@ -11,7 +11,7 @@ pipeline {
                     def results = github.interrogateBuild()
                     echo "results = ${results}"
 
-                    boolean changed = github.fileChangedIn('.')
+                    boolean changed = github.fileChangedIn(path: '.')
                     echo "File changed? ${changed}"
                 }
             }
